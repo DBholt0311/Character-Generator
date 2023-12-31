@@ -1,18 +1,14 @@
 const express = require('express');
-const characterRouter = require('./router/character-router');
+const partyRouter = require('./router/party-router');
 
-// Create server
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-//middleware
 app.use(express.json());
 app.use(express.static('server/public'));
 
-//express routes
-app.use('/characters', characterRouter);
+app.use('/party', partyRouter);
 
-// Start server
 app.listen(PORT, () => {
     console.log('listening on port', PORT);
 });

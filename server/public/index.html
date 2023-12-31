@@ -1,17 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>    
-        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-        <meta charset="utf-8"/>
-        <title>DND CHARACTER GENERATOR</title>
-        <meta name="viewport" content="width=device-width"/>
-        <link rel="styleSheet" href="styles.css">
+<html lang="en">
+    <head>
+        <meta charset="'UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inventory List</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      ></script>
+        <script defer src="scripts/client.js"></script>
     </head>
     <body>
-        <form action="submit">
-            
-        </form>
-       
-    <script src="client.js"></script>
+        <header>
+            <h1>Character Generator</h1>
+        </header>
+        <main>
+            <section>
+                <h1>Character Creation</h1>
+                <div>
+                    <form>
+                        <div id="heading">
+                            <input id="hero-name" class="name-input" type="text" placeholder="Hero Name" />
+                            <input id="hero-class" class="class-input" type="text" placeholder="Class" />
+                            <input id="hero-level" class="level-input" type="number" placeholder="Level" />
+                            <input id="hero-background" class="background-input" type="text" placeholder="Background" />
+                            <input id="player-name" class="playerName-input" type="text" placeholder="Player Name" />
+                            <input id="hero-faction" class="faction-input" type="text" placeholder="Faction" />
+                            <input id="hero-race" class="race-input" type="text" placeholder="Race" />
+                            <input id="hero-alignment" class="alignment-input" type="text" placeholder="Alignment" />
+                            <input id="hero-exp" class="exp-input" type="number" placeholder="Experience" />
+                        </div>
+                        <div id="attributes">
+                            <h2>Attributes</h2>
+                            <input id="hero-strength" class="attribute-input" type="number" placeholder="Str" />
+                            <input id="hero-dexterity" class="attribute-input" type="number" placeholder="Dex" />
+                            <input id="hero-constitution" class="attribute-input" type="number" placeholder="Con" />
+                            <input id="hero-intelligence" class="attribute-input" type="number" placeholder="Int" />
+                            <input id="hero-wisdom" class="attribute-input" type="number" placeholder="Wis" />
+                            <input id="hero-charisma" class="attribute-input" type="number" placeholder="Cha" />
+                        </div>
+                        <div id="skills">
+                            <h2>Skills</h2>
+                            <label>Acrobatics (Dex)</label>
+                            <input id="acrobatics" class="skill-input" type="checkbox"/>
+                            <label>Animal Handling (Wis)</label>
+                            <input id="animal-handling" class="skill-input" type="checkbox"/>
+                            <label>Arcana (Int)</label>
+                            <input id="arcana" class="skill-input" type="checkbox"/>
+                            <label>Athletics (Str)</label>
+                            <input id="athletics" class="skill-input" type="checkbox"/>
+                            <label>Deception (Cha)</label>
+                            <input id="deception" class="skill-input" type="checkbox"/>
+                            <label>History (Int)</label>
+                            <input id="history" class="skill-input" type="checkbox"/>
+                            <label>Insight (Wis)</label>
+                            <input id="insight" class="skill-input" type="checkbox"/>
+                            <label>Intimidation (Cha)</label>
+                            <input id="intimidation" class="skill-input" type="checkbox"/>
+                            <label>Investigation (Int)</label>
+                            <input id="investigation" class="skill-input" type="checkbox"/>
+                            <label>Medicine (Wis)</label>
+                            <input id="medicine" class="skill-input" type="checkbox"/>
+                            <label>Nature (Int)</label>
+                            <input id="nature" class="skill-input" type="checkbox"/>
+                            <label>Perception (Wis)</label>
+                            <input id="perception" class="skill-input" type="checkbox"/>
+                            <label>Performance (Cha)</label>
+                            <input id="performance" class="skill-input" type="checkbox"/>
+                            <label>Persuasion (Cha)</label>
+                            <input id="persuasion" class="skill-input" type="checkbox"/>
+                            <label>Religion (Int)</label>
+                            <input id="religion" class="skill-input" type="checkbox"/>
+                            <label>Sleight Of Hand (Dex)</label>
+                            <input id="sleight-of-hand" class="skill-input" type="checkbox"/>
+                            <label>Stealth (Dex)</label>
+                            <input id="stealth" class="skill-input" type="checkbox"/>
+                            <label>Survival (Wis)</label>
+                            <input id="survival" class="skill-input" type="checkbox"/>
+                        </div>
+                        <button id="generate-hero" onclick="generateHero(event)">Generate Hero</button>
+                    </form>
+                </div>
+                <div>
+                    <h2>Party</h2>
+                    <ul id="out-party">
+                        <!--js adds here-->
+                    </ul>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
